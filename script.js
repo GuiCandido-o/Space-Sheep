@@ -5,16 +5,24 @@
 const paginaAtual = window.location.pathname;
 const ehIndex = paginaAtual.includes("index.html") || paginaAtual === "/";
 
+// 👉 CONTROLE DE SESSÃO (só roda uma vez)
+const sessaoIniciada = sessionStorage.getItem("sessaoIniciada");
+
+if (ehIndex && !sessaoIniciada) {
+    sessionStorage.clear();
+    sessionStorage.setItem("sessaoIniciada", "true");
+}
+
 // ===============================
 // UTILIDADES
 // ===============================
 
 function salvar(key, valor) {
-    localStorage.setItem(key, valor);
+    sessionStorage.setItem(key, valor);
 }
 
 function obter(key) {
-    return localStorage.getItem(key);
+    return sessionStorage.getItem(key);
 }
 
 // ===============================
@@ -39,33 +47,27 @@ function iniciarSistemaLancamento() {
 // ===============================
 
 function verificarIdade() {
+
     const idadeSalva = obter("idadeVerificada");
 
-    // já verificado
-    if (idadeSalva) {
-        iniciarSistemaLancamento();
-        return true;
-    }
+    // se já verificou, não pergunta de novo
+    if (idadeSalva) return true;
 
     let idade = prompt("Digite sua idade para acessar o Space Sheep:");
 
-    // cancelou ou inválido
     if (idade === null || idade.trim() === "" || isNaN(idade)) {
         bloquearAcesso("Acesso negado 🚫");
         return false;
     }
 
-    // menor de idade
     if (parseInt(idade) < 16) {
         bloquearAcesso("Acesso restrito 🚫");
         return false;
     }
 
-    // acesso liberado
     salvar("idadeVerificada", "true");
     alert("Acesso liberado 🚀 Bem-vindo ao Space Sheep!");
 
-    setTimeout(iniciarSistemaLancamento, 300);
     return true;
 }
 
@@ -86,17 +88,19 @@ function bloquearAcesso(msg) {
 // ===============================
 
 function obterNomeJogador() {
+
     let nome = obter("nomeJogador");
 
-    if (!nome) {
-        nome = prompt("Digite seu nome, astronauta:");
+    // se já tem nome salvo, não pergunta
+    if (nome) return nome;
 
-        if (!nome || nome.trim() === "") {
-            nome = "Jogador Desconhecido";
-        }
+    nome = prompt("Digite seu nome, astronauta:");
 
-        salvar("nomeJogador", nome);
+    if (!nome || nome.trim() === "") {
+        nome = "Jogador Desconhecido";
     }
+
+    salvar("nomeJogador", nome);
 
     return nome;
 }
@@ -107,7 +111,7 @@ function obterNomeJogador() {
 
 function resetarDados() {
     if (confirm("Deseja resetar tudo?")) {
-        localStorage.clear();
+        sessionStorage.clear();
         location.reload();
     }
 }
@@ -170,11 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
     aplicarTemaSalvo();
 
     const acessoPermitido = verificarIdade();
-
-    // se bloqueado, para tudo
     if (!acessoPermitido) return;
 
     const nomeJogador = obterNomeJogador();
     atualizarHUD(nomeJogador);
+
+    iniciarSistemaLancamento();
 
 });
