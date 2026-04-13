@@ -481,3 +481,45 @@ footer {
         width: 30px;
     }
 }
+
+/* ===============================
+   AJUSTE DE BRILHO NO TEMA CLARO
+=============================== */
+
+.light-mode .destaque,
+.light-mode .destaque-jogo {
+    color: var(--cor-primaria);
+
+    text-shadow:
+        0 0 5px var(--cor-primaria),
+        0 0 15px var(--cor-primaria),
+        0 0 25px var(--cor-primaria);
+}
+
+/* BOTÕES E TEXTOS COM BRILHO */
+.light-mode .btn {
+    box-shadow: 0 0 10px var(--cor-primaria);
+}
+
+/* HEADER TÍTULO */
+.light-mode header h1 {
+    color: var(--cor-secundaria);
+    text-shadow:
+        0 0 5px var(--cor-secundaria),
+        0 0 10px var(--cor-secundaria);
+}
+
+/* IMAGENS COM HOVER */
+.light-mode .img-contato:hover {
+    box-shadow:
+        0 0 10px var(--cor-primaria),
+        0 0 25px var(--cor-primaria),
+        0 0 40px var(--cor-primaria);
+}
+
+/* BOTÃO FLUTUANTE */
+.light-mode .floating-btn {
+    box-shadow:
+        0 0 10px var(--cor-primaria),
+        0 0 25px var(--cor-primaria);
+}
