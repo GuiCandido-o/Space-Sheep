@@ -396,3 +396,88 @@ footer {
     border-radius: 15px;
     margin-top: 10px;
 }
+
+/* ===============================
+   RESPONSIVO (CELULAR)
+=============================== */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    /* BOTÕES DO TOPO */
+    .info-btn,
+    .reset-btn,
+    .theme-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .info-btn { left: 10px; }
+    .reset-btn { left: 80px; }
+    .theme-btn { left: 150px; }
+
+    /* MENU */
+    nav {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 6px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 4px 6px;
+    }
+
+    /* CONTAINER */
+    .container {
+        padding: 120px 10px 10px;
+    }
+
+    /* CARDS */
+    .card {
+        padding: 15px;
+    }
+
+    /* TEXTO */
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .space-mono-regular {
+        font-size: 14px;
+    }
+
+    /* BOTÕES */
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* IMAGEM PERSONAGEM */
+    .personagem-img {
+        width: 120px;
+    }
+
+    /* IFRAME */
+    .iframe-wrapper iframe {
+        aspect-ratio: 16 / 10;
+    }
+
+    /* BOTÃO FLUTUANTE */
+    .floating-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    .floating-btn img {
+        width: 30px;
+    }
+}
