@@ -1,0 +1,398 @@
+/* ===============================
+   VARIÁVEIS (FACILITA MUITO)
+=============================== */
+
+:root {
+    --cor-fundo: #000000;
+    --cor-primaria: #38bdf8;
+    --cor-secundaria: #0ea5e9;
+    --cor-header: #111827;
+    --cor-nav: #020617;
+    --cor-card: rgba(17, 24, 39, 0.9);
+    --cor-clara: #ffffff;
+    --cor-texto-escuro: #020617;
+}
+
+/* ===============================
+   BASE
+=============================== */
+
+body {
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    background-color: var(--cor-fundo);
+    color: var(--cor-clara);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* FONTES */
+.space-mono-bold { font-weight: 700; }
+.space-mono-regular { font-weight: 400; }
+
+/* ===============================
+   HEADER
+=============================== */
+
+header {
+    background-color: var(--cor-header);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-primaria);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--cor-primaria);
+    text-shadow: 0 0 5px var(--cor-primaria),
+                 0 0 10px var(--cor-primaria);
+}
+
+/* BOTÕES SUPERIORES */
+.info-btn,
+.reset-btn,
+.theme-btn {
+    position: fixed;
+    top: 20px;
+
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+
+    border: 1px solid var(--cor-primaria);
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    transition: 0.3s;
+    z-index: 2000;
+}
+
+.info-btn { left: 20px; }
+.reset-btn { left: 110px; }
+.theme-btn { left: 200px; }
+
+.info-btn:hover,
+.reset-btn:hover,
+.theme-btn:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-escuro);
+    box-shadow: 0 0 10px var(--cor-primaria);
+}
+
+/* ===============================
+   MENU
+=============================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--cor-nav);
+    padding: 8px 0;
+
+    position: sticky;
+    top: 80px;
+    z-index: 999;
+}
+
+nav a {
+    color: var(--cor-primaria);
+    padding: 6px 10px;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+}
+
+/* ANIMAÇÃO MENU */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--cor-primaria);
+    left: 0;
+    bottom: -3px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* LINK JOGO */
+.menu-jogo {
+    color: var(--cor-clara);
+    text-shadow: 0 0 10px var(--cor-primaria);
+    transform: translateX(6px);
+}
+
+/* ===============================
+   LAYOUT
+=============================== */
+
+.container {
+    padding: 140px 20px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARDS */
+.card {
+    background-color: var(--cor-card);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-primaria);
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecer 0.8s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+
+.card h2 {
+    color: var(--cor-primaria);
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   BOTÕES / TEXTOS
+=============================== */
+
+.btn-center {
+    text-align: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-escuro);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+
+    animation: pulse 2s infinite;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    animation: none;
+}
+
+/* ANIMAÇÃO BOTÃO */
+@keyframes pulse {
+    0% { box-shadow: 0 0 5px var(--cor-primaria); }
+    50% { box-shadow: 0 0 20px var(--cor-primaria); }
+    100% { box-shadow: 0 0 5px var(--cor-primaria); }
+}
+
+/* DESTAQUES */
+.destaque {
+    color: var(--cor-clara);
+    text-shadow:
+        0 0 5px var(--cor-primaria),
+        0 0 15px var(--cor-primaria),
+        0 0 25px var(--cor-primaria);
+}
+
+.destaque-jogo {
+    color: var(--cor-clara);
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 5px var(--cor-primaria),
+        0 0 15px var(--cor-primaria),
+        0 0 30px var(--cor-primaria);
+
+    animation: brilhoJogo 2s infinite;
+}
+
+@keyframes brilhoJogo {
+    0%, 100% {
+        text-shadow: 0 0 5px var(--cor-primaria),
+                     0 0 15px var(--cor-primaria),
+                     0 0 30px var(--cor-primaria);
+    }
+    50% {
+        text-shadow: 0 0 10px var(--cor-primaria),
+                     0 0 25px var(--cor-primaria),
+                     0 0 50px var(--cor-primaria);
+    }
+}
+
+/* ===============================
+   IFRAME
+=============================== */
+
+.iframe-wrapper {
+    position: relative;
+    padding: 5px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.iframe-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria), var(--cor-primaria));
+    background-size: 300%;
+    animation: borderAnim 4s linear infinite;
+    border-radius: 12px;
+}
+
+.iframe-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: #000;
+    border-radius: 10px;
+}
+
+.iframe-wrapper iframe {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+/* ANIMAÇÃO BORDA */
+@keyframes borderAnim {
+    from { background-position: 0% 50%; }
+    to   { background-position: 300% 50%; }
+}
+
+/* ===============================
+   CONTATO
+=============================== */
+
+.img-contato {
+    width: 140px;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.img-contato:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 10px var(--cor-primaria),
+        0 0 25px var(--cor-primaria),
+        0 0 40px var(--cor-primaria);
+}
+
+/* BOTÃO FLUTUANTE */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+
+    background: var(--cor-header);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 10px var(--cor-primaria),
+        0 0 25px var(--cor-primaria);
+
+    animation: float 3s ease-in-out infinite,
+               pulseGlow 2s infinite;
+
+    z-index: 999;
+}
+
+.floating-btn img {
+    width: 40px;
+}
+
+/* ANIMAÇÕES */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--cor-primaria),
+                    0 0 25px var(--cor-primaria);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--cor-primaria),
+                    0 0 40px var(--cor-primaria);
+    }
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--cor-nav);
+}
+
+/* ===============================
+   TEMA CLARO
+=============================== */
+
+.light-mode {
+    background-color: #ffffff;
+    color: var(--cor-texto-escuro);
+}
+
+.light-mode header {
+    background-color: #e5e7eb;
+    border-bottom: 2px solid var(--cor-secundaria);
+}
+
+.light-mode nav {
+    background-color: #f1f5f9;
+}
+
+.light-mode .card {
+    background-color: #ffffff;
+    border: 1px solid var(--cor-secundaria);
+}
+
+.light-mode footer {
+    background-color: #e5e7eb;
+}
+
+.personagem-img {
+    width: 150px;
+    max-width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+}

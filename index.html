@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Sheep</title>
+
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="imgs/icon.png">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="info.html" class="info-btn">INFO</a>
+        <a href="#" class="reset-btn" onclick="resetarDados()">RESET</a>
+        <a href="#" class="theme-btn" onclick="alternarTema()">TEMA</a>
+
+        <h1 class="space-mono-bold">
+            Space <span class="destaque">Sheep</span>
+        </h1>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="#jogo" class="menu-jogo">Jogo</a>
+        <a href="personagem.html">Personagem</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- INÍCIO -->
+        <section class="card" id="inicio">
+            <h2 class="space-mono-bold">Bem-vindo ao espaço</h2>
+            <p class="space-mono-regular">
+                Sobreviva ao ataque e retorne à sua terra natal
+            </p>
+
+            <div class="btn-center">
+                <a href="#jogo" class="btn">Jogar Agora</a>
+            </div>
+        </section>
+
+        <!-- HISTÓRIA -->
+        <section class="card" id="historia">
+            <h2 class="space-mono-bold">História</h2>
+            <p class="space-mono-regular">
+                Em uma galáxia distante, existia a civilização dos Ovis Astra — uma raça avançada e pacífica.
+                <br><br>
+                Durante uma missão de exploração, sua nave foi atacada pelos Suar’k, uma raça militarizada que busca dominar o universo.
+                <br><br>
+                A nave foi destruída… mas uma única ovelha sobreviveu.
+                <br><br>
+                Seu nome é Eira.
+                <br><br>
+                Agora, perdida no espaço, ela precisa sobreviver, evitar inimigos e encontrar um caminho de volta para casa.
+            </p>
+        </section>
+
+        <!-- JOGO -->
+        <section class="card" id="jogo">
+            <h2 class="space-mono-bold destaque-jogo">Jogo Aqui!!</h2>
+
+            <!-- HUD -->
+            <div class="hud">
+                <p id="nome-jogo"></p>
+                <p id="pontuacao"></p>
+                <p id="nivel"></p>
+                <p id="vidas"></p>
+                <p id="status"></p>
+            </div>
+
+            <!-- IFRAME -->
+            <div class="iframe-wrapper">
+                <iframe src="jogo/index.html"></iframe>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section class="card" id="sobre">
+            <h2 class="space-mono-bold">Sobre o projeto</h2>
+            <p class="space-mono-regular">
+                Este é um jogo em desenvolvimento.
+            </p>
+            <a href="sobre.html" class="btn">Saiba Mais</a>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="card" id="contato">
+            <h2 class="space-mono-bold">Contato</h2>
+
+            <a href="https://mail.google.com/mail/?view=cm&to=guilhermecandidodasilva09@gmail.com&su=Contato%20Space%20Sheep&body=Olá,%20vim%20pelo%20seu%20jogo!" target="_blank">
+                <img src="imgs/gmail.png" alt="Enviar Email" class="img-contato">
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="space-mono-regular">© 2026 Space Game Hub</p>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <a href="https://mail.google.com/mail/?view=cm&to=guilhermecandidodasilva09@gmail.com&su=Contato%20Space%20Sheep&body=Olá,%20vim%20pelo%20seu%20site!" class="floating-btn" target="_blank">
+        <img src="imgs/gmail.png" alt="Email">
+    </a>
+
+</body>
+</html>

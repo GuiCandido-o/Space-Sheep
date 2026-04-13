@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Personagem - Space Sheep</title>
+
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="imgs/icon.png">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="info.html" class="info-btn">INFO</a>
+        <a href="#" class="reset-btn" onclick="resetarDados()">RESET</a>
+        <a href="#" class="theme-btn" onclick="alternarTema()">TEMA</a>
+
+        <h1 class="space-mono-bold">
+            Space <span class="destaque">Sheep</span>
+        </h1>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="index.html#jogo" class="menu-jogo">Jogo</a>
+        <a href="personagem.html">Personagem</a>
+        <a href="index.html#contato">Contato</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- PERSONAGEM -->
+        <section class="card">
+            <h2 class="space-mono-bold">A Sobrevivente</h2>
+            <img 
+                src="Imgs/ovelha.png" 
+                alt="Ovelha espacial Eira" 
+                class="personagem-img">
+        </section>
+
+        <!-- NOME -->
+        <section class="card">
+            <h2 class="space-mono-bold">Nome</h2>
+            <p class="space-mono-regular destaque-jogo">
+                EIRA
+            </p>
+        </section>
+
+        <!-- HISTÓRIA -->
+        <section class="card">
+            <h2 class="space-mono-bold">História</h2>
+            <p class="space-mono-regular">
+                Eira é a única sobrevivente da destruição da nave Ovis Astra.
+                <br><br>
+                Lançada ao espaço nos momentos finais do ataque, ela agora vaga entre os destroços enquanto tenta escapar dos inimigos que ainda patrulham a região.
+                <br><br>
+                Sozinha no vazio, sua missão é sobreviver… e levar a verdade de volta ao seu planeta.
+            </p>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="card">
+            <h2 class="space-mono-bold">Habilidades</h2>
+            <p class="space-mono-regular">
+                Reflexos rápidos para desviar de obstáculos
+                <br><br>
+                Adaptação ao ambiente espacial
+                <br><br>
+                Resistência aumentada graças ao traje tecnológico
+            </p>
+        </section>
+
+        <!-- EQUIPAMENTO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Equipamento</h2>
+            <p class="space-mono-regular">
+                Traje experimental de sobrevivência espacial
+                <br><br>
+                Sistema de suporte de vida avançado
+                <br><br>
+                Interface de navegação integrada
+            </p>
+        </section>
+
+        <!-- FRASE -->
+        <section class="card">
+            <h2 class="space-mono-bold">Mensagem</h2>
+            <p class="space-mono-regular destaque">
+                "Mesmo no vazio infinito… eu não vou desistir."
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="space-mono-regular">© 2026 Space Game Hub</p>
+    </footer>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+        <button onclick="fecharPopup()">OK</button>
+    </div>
+
+</body>
+</html>

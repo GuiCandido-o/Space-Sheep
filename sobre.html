@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre - Space Sheep</title>
+
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="imgs/icon.png">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="info.html" class="info-btn">INFO</a>
+        <a href="#" class="reset-btn" onclick="resetarDados()">RESET</a>
+        <a href="#" class="theme-btn" onclick="alternarTema()">TEMA</a>
+
+        <h1 class="space-mono-bold">
+            Space <span class="destaque">Sheep</span>
+        </h1>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="index.html#jogo" class="menu-jogo">Jogo</a>
+        <a href="personagem.html">Personagem</a>
+        <a href="index.html#contato">Contato</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- HISTÓRIA -->
+        <section class="card">
+            <h2 class="space-mono-bold">História</h2>
+            <p class="space-mono-regular">
+                Em uma galáxia distante, a raça pacífica conhecida como 
+                <span class="destaque">Ovis Astra</span> explorava o universo em busca de conhecimento.
+                <br><br>
+                Durante uma missão, sua nave foi surpreendida por um ataque brutal dos 
+                <span class="destaque">Suar’k</span>, uma raça de porcos militarizados que desejam dominar o espaço.
+                <br><br>
+                A nave foi destruída… mas uma única ovelha sobreviveu.
+                <br><br>
+                Agora, equipada com um traje experimental, ela vaga pelo espaço tentando sobreviver e encontrar um caminho de volta para casa.
+            </p>
+        </section>
+
+        <!-- OBJETIVO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Objetivo do Jogo</h2>
+            <p class="space-mono-regular">
+                Seu objetivo é sobreviver no vazio do espaço enquanto desvia dos inimigos e atravessa os destroços da nave.
+                <br><br>
+                Cada segundo conta. Cada movimento pode ser o último.
+                <br><br>
+                Vá o mais longe possível e prove que até uma ovelha pode desafiar o universo.
+            </p>
+        </section>
+
+        <!-- MECÂNICAS -->
+        <section class="card">
+            <h2 class="space-mono-bold">Mecânicas</h2>
+            <p class="space-mono-regular">
+                Desvio de obstáculos em alta velocidade  
+                <br><br>
+                Movimento fluido com dificuldade progressiva  
+                <br><br>
+                Controles:
+                <br>
+                W - pular | A - esquerda | D - direita  
+                <br><br>
+                Sistema focado em reflexos e sobrevivência  
+                <br><br>
+                Encontros com inimigos durante a fuga
+            </p>
+        </section>
+
+        <!-- INSPIRAÇÃO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Inspiração</h2>
+            <p class="space-mono-regular">
+                Space Sheep é inspirado em jogos arcade clássicos com foco em ação rápida e desafios de reflexo.
+                <br><br>
+                A ideia foi misturar simplicidade com um universo sci-fi estilizado, criando uma experiência direta, mas envolvente.
+            </p>
+        </section>
+
+        <!-- DESENVOLVIMENTO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Desenvolvimento</h2>
+            <p class="space-mono-regular">
+                Este projeto foi desenvolvido com foco em criatividade, design visual e aprendizado de desenvolvimento web.
+                <br><br>
+                O objetivo foi criar um jogo simples, mas com identidade forte, utilizando elementos visuais neon e temática espacial.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="space-mono-regular">© 2026 Space Game Hub</p>
+    </footer>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+        <button onclick="fecharPopup()">OK</button>
+    </div>
+
+</body>
+</html>

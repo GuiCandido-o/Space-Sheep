@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Info - Space Sheep</title>
+
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="imgs/icon.png">
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="info-btn">VOLTAR</a>
+        <a href="#" class="reset-btn" onclick="resetarDados()">RESET</a>
+        <a href="#" class="theme-btn" onclick="alternarTema()">TEMA</a>
+
+        <h1 class="space-mono-bold">
+            Space <span class="destaque">Sheep</span>
+        </h1>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="index.html#jogo" class="menu-jogo">Jogo</a>
+        <a href="personagem.html">Personagem</a>
+        <a href="index.html#contato">Contato</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- INFO DO PROJETO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Informações do Projeto</h2>
+
+            <p class="space-mono-regular">
+                <strong>Nome:</strong> Space Sheep  
+                <br><br>
+                <strong>Tipo:</strong> Jogo Arcade / Sobrevivência  
+                <br><br>
+                <strong>Tema:</strong> Espaço / Sci-Fi  
+                <br><br>
+                <strong>Desenvolvedor:</strong> Você  
+                <br><br>
+                <strong>Tecnologias:</strong> Construct 3  
+            </p>
+        </section>
+
+        <!-- STATUS -->
+        <section class="card">
+            <h2 class="space-mono-bold">Status do Desenvolvimento</h2>
+
+            <p class="space-mono-regular">
+                Este projeto ainda está em desenvolvimento.
+                <br><br>
+                A versão atual do jogo foi criada para testes e demonstração das mecânicas principais.
+                <br><br>
+                Atualmente, apenas a <span class="destaque">primeira fase</span> está disponível.
+                <br><br>
+                Novas fases, inimigos e mecânicas serão adicionados futuramente.
+            </p>
+        </section>
+
+        <!-- SOBRE O JOGO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Sobre o Jogo</h2>
+
+            <p class="space-mono-regular">
+                Em Space Sheep, você controla uma ovelha sobrevivente vagando pelo espaço após a destruição de sua nave.
+                <br><br>
+                O objetivo é desviar de obstáculos, sobreviver ao ambiente hostil e escapar dos inimigos enquanto avança pelo vazio.
+            </p>
+        </section>
+
+        <!-- OBJETIVO DO PROJETO -->
+        <section class="card">
+            <h2 class="space-mono-bold">Objetivo do Projeto</h2>
+
+            <p class="space-mono-regular">
+                Criar um jogo simples, divertido e com identidade visual marcante,
+                explorando conceitos de desenvolvimento web e design de jogos.
+                <br><br>
+                Este projeto também serve como base para futuras expansões e melhorias.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="space-mono-regular">© 2026 Space Game Hub</p>
+    </footer>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+        <h2 id="popup-title"></h2>
+        <p id="popup-text"></p>
+        <button onclick="fecharPopup()">OK</button>
+    </div>
+
+</body>
+</html>
