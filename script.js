@@ -41,28 +41,37 @@ function iniciarSistemaLancamento() {
 function verificarIdade() {
     const idadeSalva = obter("idadeVerificada");
 
+    // já verificado
     if (idadeSalva) {
         iniciarSistemaLancamento();
-        return;
+        return true;
     }
 
     let idade = prompt("Digite sua idade para acessar o Space Sheep:");
 
-    if (!idade || isNaN(idade)) {
+    // cancelou ou inválido
+    if (idade === null || idade.trim() === "" || isNaN(idade)) {
         bloquearAcesso("Acesso negado 🚫");
-        return;
+        return false;
     }
 
+    // menor de idade
     if (parseInt(idade) < 16) {
         bloquearAcesso("Acesso restrito 🚫");
-        return;
+        return false;
     }
 
+    // acesso liberado
     salvar("idadeVerificada", "true");
     alert("Acesso liberado 🚀 Bem-vindo ao Space Sheep!");
 
     setTimeout(iniciarSistemaLancamento, 300);
+    return true;
 }
+
+// ===============================
+// BLOQUEIO
+// ===============================
 
 function bloquearAcesso(msg) {
     document.body.innerHTML = `
@@ -70,7 +79,6 @@ function bloquearAcesso(msg) {
             ${msg}
         </h1>
     `;
-    throw new Error("Acesso bloqueado");
 }
 
 // ===============================
@@ -157,8 +165,14 @@ function atualizarHUD(nomeJogador) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    console.log("🚀 Script carregado");
+
     aplicarTemaSalvo();
-    verificarIdade();
+
+    const acessoPermitido = verificarIdade();
+
+    // se bloqueado, para tudo
+    if (!acessoPermitido) return;
 
     const nomeJogador = obterNomeJogador();
     atualizarHUD(nomeJogador);
